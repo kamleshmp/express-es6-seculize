@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 
 import express from 'express';
-import dbConfig from './config/db';
+// import dbConfig from './config/db';
 import middlewaresConfig from './config/middlewares';
 import { MeetupRoutes, GroupRoutes, UserRoutes } from './modules';
 
@@ -10,7 +10,7 @@ const app = express();
 /**
 * Database
 */
-dbConfig();
+// dbConfig();
 /**
 * Middlewares
 */

@@ -5,22 +5,35 @@
   "scripts": {
     "dev": "NODE_ENV=development nodemon dist/index.js",
     "build:watch": "babel -w --out-dir=dist ./src",
+    "start": "concurrently --kill-others \"npm run build:watch\" \"npm run dev\"",
     "clean": "rimraf dist",
     "lint": "eslint src",
-    "lint:fix": "eslint --fix src"
+    "lint:fix": "eslint --fix src",
+    "db:drop": "node_modules/.bin/sequelize db:drop",
+    "db:create": "node_modules/.bin/sequelize db:create",
+    "db:migrate": "node_modules/.bin/sequelize db:migrate",
+    "db:undo": "node_modules/.bin/sequelize db:migrate:undo",
+    "undo:all": "node_modules/.bin/sequelize db:migrate:undo:all"
   },
   "repository": {},
   "author": "Emanuel Quimper",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.16.1",
+    "bcrypt": "^3.0.0",
     "body-parser": "^1.16.0",
+    "concurrently": "^3.6.1",
     "express": "^4.14.1",
     "jsonwebtoken": "^7.3.0",
     "mongoose": "^4.9.4",
     "morgan": "^1.7.0",
+    "mysql2": "^1.6.1",
     "passport": "^0.3.2",
-    "passport-jwt": "^2.2.1"
+    "passport-jwt": "^2.2.1",
+    "passport-local": "^1.0.0",
+    "sequelize": "^4.38.0",
+    "sequelize-cli": "^4.0.0",
+    "uuid": "^3.3.2"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

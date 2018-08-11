@@ -18,6 +18,6 @@ const MeetupSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'Group',
   },
-}, { timestamps: true });
+}, {  });
 
 export default mongoose.model('Meetup', MeetupSchema);
